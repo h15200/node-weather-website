@@ -1,7 +1,5 @@
-console.log('client side JS is loaded!')
 
-// the js file in the public dir is a CLIENT-side file, so
-// you can use browser functions like fetch()
+// public/app.js is a CLIENT-side file, so you can use browser functions like fetch()
 
 
 // grab the value from the form in index.hbs
