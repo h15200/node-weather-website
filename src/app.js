@@ -1,4 +1,4 @@
-const path = require('path')
+ const path = require('path')
 const express = require("express")
 const hbs = require('hbs') // you need this for partials
 const geocode = require('./utils/geocode')
@@ -6,6 +6,8 @@ const forecast = require('./utils/forecast')
 
 
 const app = express() // to initialize express
+const port = process.env.PORT || 3000 // the port hiroku will use, or if it doesn't exist, 3000
+
 // paths for public and templates dir
 const publicDirectoryPath = path.join(__dirname, '../public') //dirname, path.join are core variable and methods
 const viewsPath = path.join(__dirname, '../templates/views') // point to the dir of hbs files
@@ -101,6 +103,6 @@ app.get('*', (req, res) => {
   })
 })
 
-app.listen(3000, () => { // set up the port. consoling log as a dev update
-  console.log("Server is up on port 3000.")
+app.listen(port, () => { // set up the port. consoling log as a dev update
+  console.log(`Server is up on port ${port}.`)
 })
